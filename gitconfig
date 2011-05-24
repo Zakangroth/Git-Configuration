@@ -14,10 +14,11 @@
 	lg = log --oneline --graph
 	o = checkout
 	b = branch
-	f = fsck
+	f = fetch
+	fk = fsck
 	ps = push
 	pl = pull
-	pr = prune
+	pr = prune -v
 	r = remote
 	ss = stash save
 	sl = stash list
