@@ -1,14 +1,20 @@
 [user]
 	name = Pavan Kumar Sunkara
-	email = pavan@chronus.com
+	email = pavan.sss1991@gmail.com
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [alias]
 	s = status
+	sh = show
 	d = diff
 	dc = diff --cached
 	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	cd = commit --amend
+	cad = commit -a --amend
 	a = add .
 	l = log --oneline
 	lg = log --oneline --graph
@@ -16,10 +22,14 @@
 	b = branch
 	f = fetch
 	fk = fsck
+	m = merge
 	ps = push
 	pl = pull
+	pb = pull --rebase
 	pr = prune -v
 	r = remote
+	rb = rebase
+	rp = remote --prune
 	ss = stash save
 	sl = stash list
 	sp = stash pop
