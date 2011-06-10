@@ -9,6 +9,8 @@
 	sh = show
 	d = diff
 	dc = diff --cached
+	dk = diff --check
+	dck = diff --cached --check
 	c = commit
 	ca = commit -a
 	cm = commit -m
@@ -16,11 +18,15 @@
 	cd = commit --amend
 	cad = commit -a --amend
 	a = add .
+	ap = apply
+	as = apply --stat
+	ac = apply --check
 	l = log --oneline
 	lg = log --oneline --graph
 	o = checkout
 	b = branch
 	f = fetch
+	fp = format-patch
 	fk = fsck
 	m = merge
 	ps = push
