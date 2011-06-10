@@ -7,6 +7,12 @@
 [alias]
 	s = status
 	sh = show
+	ss = stash save
+	sl = stash list
+	sp = stash pop
+	sd = stash drop
+	sa = stash apply
+	sc = stash clear
 	d = diff
 	dc = diff --cached
 	dk = diff --check
@@ -36,12 +42,7 @@
 	r = remote
 	rb = rebase
 	rp = remote --prune
-	ss = stash save
-	sl = stash list
-	sp = stash pop
-	sd = stash drop
-	sa = stash apply
-	sc = stash clear
+	rs = remote show
 	meldon = config diff.external /home/pkumar/.diff.py
 	meldof = config --remove-section diff
 [color]
