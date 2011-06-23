@@ -6,13 +6,12 @@
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [alias]
 	s = status
-	sh = show
-	ss = stash save
-	sl = stash list
-	sp = stash pop
-	sd = stash drop
 	sa = stash apply
 	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
 	d = diff
 	dc = diff --cached
 	dk = diff --check
@@ -31,6 +30,8 @@
 	lg = log --oneline --graph
 	o = checkout
 	b = branch
+	ba = branch -a
+	br = branch -r
 	f = fetch
 	fp = format-patch
 	fk = fsck
@@ -39,10 +40,17 @@
 	pl = pull
 	pb = pull --rebase
 	pr = prune -v
+	pso = push origin
+	plo = pull origin
+	pbo = pull --rebase origin
 	r = remote
 	rb = rebase
-	rp = remote --prune
+	re = reset
+	rp = remote prune
 	rs = remote show
+	rso = remote show origin
+	rpo = remote prune origin
+	w = show
 	meldon = config diff.external /home/pkumar/.diff.py
 	meldof = config --remove-section diff
 [color]
