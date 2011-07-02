@@ -29,8 +29,10 @@
 	l = log --oneline
 	lg = log --oneline --graph
 	o = checkout
+	ob = checkout -b
 	b = branch
 	ba = branch -a
+	bd = branch -d
 	br = branch -r
 	f = fetch
 	fp = format-patch
@@ -40,9 +42,12 @@
 	pl = pull
 	pb = pull --rebase
 	pr = prune -v
+	psf = push -f
+	psu = push -u
 	pso = push origin
 	plo = pull origin
 	pbo = pull --rebase origin
+	psof = push origin -f
 	r = remote
 	rb = rebase
 	re = reset
