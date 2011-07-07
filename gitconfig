@@ -51,6 +51,13 @@
 	r = remote
 	rb = rebase
 	re = reset
+	reh = reset --hard
+	rem = reset --mixed
+	res = reset --soft
+	rehh = reset --hard HEAD
+	remh = reset --mixed HEAD
+	resh = reset --soft HEAD
+	rv = remote -v
 	rp = remote prune
 	rs = remote show
 	rso = remote show origin
