@@ -4,6 +4,13 @@
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = pavan.sss1991@gmail.com
+	smtppass = password
+	smtpserverport = 587
+	to = git@vger.kernel.org
 [alias]
 	s = status
 	sa = stash apply
@@ -47,7 +54,8 @@
 	pso = push origin
 	plo = pull origin
 	pbo = pull --rebase origin
-	psof = push origin -f
+	psfo = push -f origin
+	psuo = push -u origin
 	r = remote
 	rb = rebase
 	re = reset
