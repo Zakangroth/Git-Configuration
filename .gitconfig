@@ -11,6 +11,8 @@
 	smtppass = password
 	smtpserverport = 587
 	to = git@vger.kernel.org
+[web]
+	browser = google-chrome
 [alias]
 	s = status
 	sa = stash apply
