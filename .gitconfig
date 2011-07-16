@@ -75,6 +75,7 @@
 	w = show
 	meldon = config diff.external /home/pkumar/.diff.py
 	meldof = config --remove-section diff
+	human = name-rev --name-only --refs=refs/heads/*
 [color]
 	ui = true
 [color "branch"]
