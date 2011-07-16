@@ -13,8 +13,12 @@
 	to = git@vger.kernel.org
 [web]
 	browser = google-chrome
+[rerere]
+	enabled = 1
+	autoupdate = 1
 [alias]
 	s = status
+	sb = status -s -b
 	sa = stash apply
 	sc = stash clear
 	sd = stash drop
@@ -36,7 +40,7 @@
 	as = apply --stat
 	ac = apply --check
 	l = log --oneline
-	lg = log --oneline --graph
+	lg = log --oneline --graph --decorate
 	o = checkout
 	ob = checkout -b
 	b = branch
