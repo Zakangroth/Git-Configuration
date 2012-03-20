@@ -4,15 +4,17 @@
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
 	smtpuser = pavan.sss1991@gmail.com
 	smtppass = password
 	smtpserverport = 587
-	to = git@vger.kernel.org
 [web]
 	browser = google-chrome
+[instaweb]
+	httpd = apache2 -f
 [rerere]
 	enabled = 1
 	autoupdate = 1
@@ -81,6 +83,10 @@
 	pluo = pull -u origin
 	#############
 	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
 	#############
 	re = reset
 	rh = reset HEAD
@@ -107,7 +113,7 @@
 	#############
 	human = name-rev --name-only --refs=refs/heads/*
 [color]
-	ui = true
+	ui = always
 [color "branch"]
 	current = yellow bold
 	local = green bold
