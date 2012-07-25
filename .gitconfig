@@ -28,9 +28,12 @@
 	sl = stash list
 	sp = stash pop
 	ss = stash save
+	sw = stash show
 	#############
 	d = diff
 	dc = diff --cached
+	dl = difftool
+	dlc = difftool --cached
 	dk = diff --check
 	dck = diff --cached --check
 	#############
@@ -42,10 +45,15 @@
 	cad = commit -a --amend
 	#############
 	a = add .
+	ai = add -i
 	#############
 	ap = apply
 	as = apply --stat
 	ac = apply --check
+	#############
+	ama = am --abort
+	amr = am --resolved
+	ams = am --skip
 	#############
 	l = log --oneline
 	lg = log --oneline --graph --decorate
@@ -66,21 +74,30 @@
 	fk = fsck
 	#############
 	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	ms = merge --skip
 	#############
 	pr = prune -v
 	#############
 	ps = push
-	pl = pull
-	pb = pull --rebase
 	psf = push -f
 	psu = push -u
-	plu = pull -u
 	pso = push origin
+	psom = push origin master
+	#############
+	pl = pull
+	plu = pull -u
 	plo = pull origin
+	plp = pull upstream
+	plom = pull origin master
+	plpm = pull upstream master
+	#############
+	pb = pull --rebase
 	pbo = pull --rebase origin
-	psfo = push -f origin
-	psuo = push -u origin
-	pluo = pull -u origin
+	pbp = pull --rebase upstream
+	pbom = pull --rebase origin master
+	pbpm = pull --rebase upstream master
 	#############
 	rb = rebase
 	rba = rebase --abort
@@ -107,9 +124,8 @@
 	rpo = remote prune origin
 	#############
 	w = show
-	#############
-	meldon = config diff.external /home/pkumar/.meld.py
-	meldof = config --remove-section diff
+	wp = show -p
+	wr = show -p --no-color
 	#############
 	human = name-rev --name-only --refs=refs/heads/*
 [color]
@@ -128,6 +144,10 @@
 	added = green bold
 	changed = yellow bold
 	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
 [github]
 	user = pkumar
 	token = token
