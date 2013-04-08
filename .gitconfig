@@ -35,6 +35,7 @@
 	dl = difftool
 	dlc = difftool --cached
 	dk = diff --check
+	dp = diff --patience
 	dck = diff --cached --check
 	#############
 	c = commit
@@ -84,6 +85,8 @@
 	psf = push -f
 	psu = push -u
 	pso = push origin
+	psfo = push -f origin
+	psuo = push -u origin
 	psom = push origin master
 	#############
 	pl = pull
@@ -127,6 +130,12 @@
 	wp = show -p
 	wr = show -p --no-color
 	#############
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	human = name-rev --name-only --refs=refs/heads/*
 [color]
 	ui = always
