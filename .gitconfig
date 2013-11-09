@@ -18,6 +18,31 @@
 [rerere]
 	enabled = 1
 	autoupdate = 1
+[push]
+	default = matching
+[color]
+	ui = always
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[github]
+	user = pkumar
+	token = token
 [alias]
 	s = status
 	sb = status -s -b
@@ -137,26 +162,3 @@
 	ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	human = name-rev --name-only --refs=refs/heads/*
-[color]
-	ui = always
-[color "branch"]
-	current = yellow bold
-	local = green bold
-	remote = cyan bold
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
-[github]
-	user = pkumar
-	token = token
