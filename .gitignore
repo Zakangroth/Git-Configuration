@@ -13,11 +13,6 @@
 *.swo
 *~
 
-# Editor files #
-################
-*.sublime-workspace
-*.sublime-project
-
 # Packages #
 ############
 *.7z
