@@ -148,7 +148,7 @@
 	#############
 	r = remote
 	ra = remote add
-	rm = remote rm
+	rr = remote rm
 	rv = remote -v
 	rp = remote prune
 	rs = remote show
