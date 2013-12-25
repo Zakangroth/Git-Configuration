@@ -70,6 +70,7 @@
 	cam = commit -am
 	cd = commit --amend
 	cad = commit -a --amend
+	ced = commit --allow-empty --amend
 	#############
 	a = add .
 	ai = add -i
