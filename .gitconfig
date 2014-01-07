@@ -43,35 +43,13 @@
 [github]
 	user = pkumar
 	token = token
+[gitflow "prefix"]
+	feature = feature-
+	release = release-
+	hotfix = hotfix-
+	support = support-
+	versiontag = v
 [alias]
-	s = status
-	sb = status -s -b
-	#############
-	sa = stash apply
-	sc = stash clear
-	sd = stash drop
-	sl = stash list
-	sp = stash pop
-	ss = stash save
-	sw = stash show
-	#############
-	d = diff
-	dc = diff --cached
-	dl = difftool
-	dlc = difftool --cached
-	dk = diff --check
-	dp = diff --patience
-	dck = diff --cached --check
-	#############
-	c = commit
-	ca = commit -a
-	cm = commit -m
-	cem = commit --allow-empty -m
-	cam = commit -am
-	cd = commit --amend
-	cad = commit -a --amend
-	ced = commit --allow-empty --amend
-	#############
 	a = add .
 	ai = add -i
 	#############
@@ -83,16 +61,27 @@
 	amr = am --resolved
 	ams = am --skip
 	#############
-	l = log --oneline
-	lg = log --oneline --graph --decorate
-	#############
-	o = checkout
-	ob = checkout -b
-	#############
 	b = branch
 	ba = branch -a
 	bd = branch -d
 	br = branch -r
+	#############
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cem = commit --allow-empty -m
+	cam = commit -am
+	cd = commit --amend
+	cad = commit -a --amend
+	ced = commit --allow-empty --amend
+	#############
+	d = diff
+	dc = diff --cached
+	dl = difftool
+	dlc = difftool --cached
+	dk = diff --check
+	dp = diff --patience
+	dck = diff --cached --check
 	#############
 	f = fetch
 	fo = fetch origin
@@ -101,10 +90,21 @@
 	#############
 	fk = fsck
 	#############
+	g = grep -p
+	#############
+	l = log --oneline
+	lg = log --oneline --graph --decorate
+	#############
+	ls = ls-files
+	lsf = "!git ls-files | grep -i"
+	#############
 	m = merge
 	ma = merge --abort
 	mc = merge --continue
 	ms = merge --skip
+	#############
+	o = checkout
+	ob = checkout -b
 	#############
 	pr = prune -v
 	#############
@@ -157,12 +157,20 @@
 	rso = remote show origin
 	rpo = remote prune origin
 	#############
+	s = status
+	sb = status -s -b
+	#############
+	sa = stash apply
+	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	sw = stash show
+	#############
 	w = show
 	wp = show -p
 	wr = show -p --no-color
-	#############
-	ls = ls-files
-	lsf = "!git ls-files | grep -i"
 	#############
 	svnr = svn rebase
 	svnd = svn dcommit
