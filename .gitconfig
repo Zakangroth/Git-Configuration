@@ -9,7 +9,7 @@
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
 	smtpuser = pavan.sss1991@gmail.com
-	smtppass = icjbejkkqtyvuach
+	smtppass = password
 	smtpserverport = 587
 [web]
 	browser = google-chrome
@@ -50,7 +50,7 @@
 	support = support-
 	versiontag = v
 [alias]
-	a = add .
+	a = add --all
 	ai = add -i
 	#############
 	ap = apply
@@ -85,6 +85,7 @@
 	#############
 	f = fetch
 	fo = fetch origin
+	fu = fetch upstream
 	#############
 	fp = format-patch
 	#############
@@ -151,11 +152,15 @@
 	ra = remote add
 	rr = remote rm
 	rv = remote -v
+	rm = remote rename
 	rp = remote prune
 	rs = remote show
 	rao = remote add origin
+	rau = remote add upstream
 	rso = remote show origin
+	rsu = remote show upstream
 	rpo = remote prune origin
+	rpu = remote prune upstream
 	#############
 	s = status
 	sb = status -s -b
