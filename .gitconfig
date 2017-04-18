@@ -1,23 +1,11 @@
 [user]
-	name = Pavan Kumar Sunkara
-	email = pavan.sss1991@gmail.com
+	name = Zakangroth
+	email = jean.herrier@gmail.com
 [core]
-	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore
-[sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.gmail.com
-	smtpuser = pavan.sss1991@gmail.com
-	smtppass = password
-	smtpserverport = 587
 [web]
 	browser = google-chrome
-[instaweb]
-	httpd = apache2 -f
-[rerere]
-	enabled = 1
-	autoupdate = 1
 [push]
 	default = matching
 [color]
@@ -36,19 +24,6 @@
 	added = green bold
 	changed = yellow bold
 	untracked = red bold
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = false
-[github]
-	user = pkumar
-	token = token
-[gitflow "prefix"]
-	feature = feature-
-	release = release-
-	hotfix = hotfix-
-	support = support-
-	versiontag = v
 [alias]
 	a = add --all
 	ai = add -i
@@ -63,8 +38,12 @@
 	#############
 	b = branch
 	ba = branch -a
-	bd = branch -d
+	bd = branch -D
 	br = branch -r
+	brm = branch --merged
+	brnm = branch --no-merged
+	brma = branch -a --merged
+	brnma = branch -a --no-merged
 	#############
 	c = commit
 	ca = commit -a
@@ -93,7 +72,7 @@
 	#############
 	g = grep -p
 	#############
-	l = log --oneline
+	l = log -5 --oneline
 	lg = log --oneline --graph --decorate
 	#############
 	ls = ls-files
@@ -111,6 +90,7 @@
 	#############
 	ps = push
 	psf = push -f
+	please = push --force-with-lease
 	psu = push -u
 	pso = push origin
 	psao = push --all origin
@@ -173,30 +153,17 @@
 	ss = stash save
 	sw = stash show
 	#############
+	tree  =  log --graph --all --decorate --pretty=format:'%Cred%h%Creset - %s %C(yellow)%d%Creset%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	tree2 =  log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	tree3 =  log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	#############
 	w = show
 	wp = show -p
-	wr = show -p --no-color
-	#############
-	svnr = svn rebase
-	svnd = svn dcommit
-	svnl = svn log --oneline --show-commit
-	#############
-	assume = update-index --assume-unchanged
-	unassume = update-index --no-assume-unchanged
-	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-	unassumeall = !git assumed | xargs git update-index --no-assume-unchanged
-	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
-	#############
-	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
-	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
-	#############
-	whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
-	#############
-	barebranch = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
-	flat = clone --depth 1
-	subpull = !git submodule foreach git pull --tags origin master
-	subrepo = !sh -c 'filter-branch --prune-empty --subdirectory-filter $1 master' -
-	human = name-rev --name-only --refs=refs/heads/*
-	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
-	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	wr = show -p --no-color	
+[gc]
+	rerereUnresolved = 15
+	rerereResolved = 365
+[mergetool]
+	keepBackup = false
+[rerere]
+	enabled = true
