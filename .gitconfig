@@ -27,11 +27,9 @@
 [alias]
 	a = add --all
 	ai = add -i
-	#############
 	ap = apply
 	as = apply --stat
 	ac = apply --check
-	#############
 	ama = am --abort
 	amr = am --resolved
 	ams = am --skip
@@ -53,6 +51,8 @@
 	cd = commit --amend
 	cad = commit -a --amend
 	ced = commit --allow-empty --amend
+	# Show the diff between the latest commit and the current state
+	cshow = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 	#############
 	d = diff
 	dc = diff --cached
@@ -65,16 +65,16 @@
 	f = fetch
 	fo = fetch origin
 	fu = fetch upstream
-	#############
 	fp = format-patch
-	#############
 	fk = fsck
 	#############
 	g = grep -p
 	#############
+	# Interactive rebase with the given number of latest commits
+	interactive = "!r() { git rebase -i HEAD~$1; }; r"
+	#############
 	l = log -5 --oneline
 	lg = log --oneline --graph --decorate
-	#############
 	ls = ls-files
 	lsf = "!git ls-files | grep -i"
 	#############
@@ -87,7 +87,6 @@
 	ob = checkout -b
 	#############
 	pr = prune -v
-	#############
 	ps = push
 	psf = push -f
 	please = push --force-with-lease
@@ -99,14 +98,12 @@
 	psom = push origin master
 	psfom = push -f origin master
 	psuom = push -u origin master
-	#############
 	pl = pull
 	plu = pull -u
 	plo = pull origin
 	plp = pull upstream
 	plom = pull origin master
 	plpm = pull upstream master
-	#############
 	pb = pull --rebase
 	pbo = pull --rebase origin
 	pbp = pull --rebase upstream
@@ -118,7 +115,6 @@
 	rbc = rebase --continue
 	rbi = rebase --interactive
 	rbs = rebase --skip
-	#############
 	re = reset
 	rh = reset HEAD
 	reh = reset --hard
@@ -127,7 +123,6 @@
 	rehh = reset --hard HEAD
 	remh = reset --mixed HEAD
 	resh = reset --soft HEAD
-	#############
 	r = remote
 	ra = remote add
 	rr = remote rm
@@ -152,6 +147,8 @@
 	sp = stash pop
 	ss = stash save
 	sw = stash show
+	# Switch to a branch, creating it if necessary
+	switch = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	#############
 	tree  =  log --graph --all --decorate --pretty=format:'%Cred%h%Creset - %s %C(yellow)%d%Creset%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	tree2 =  log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
@@ -159,13 +156,7 @@
 	#############
 	# Update project without merge, remove tracking on delete branches
 	update = "!u() { git fetch && git fetch -p -t; }; u"
-	# Show the diff between the latest commit and the current state
-	cshow = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-	# Switch to a branch, creating it if necessary
-	switch = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-	# Interactive rebase with the given number of latest commits
-	interactive = "!r() { git rebase -i HEAD~$1; }; r"
-	
+	#############	
 	w = show
 	wp = show -p
 	wr = show -p --no-color	
