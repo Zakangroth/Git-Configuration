@@ -157,6 +157,15 @@
 	tree2 =  log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	tree3 =  log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	#############
+	# Update project without merge, remove tracking on delete branches
+	update = "!u() { git fetch && git fetch -p -t; }; u"
+	# Show the diff between the latest commit and the current state
+	cshow = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	# Switch to a branch, creating it if necessary
+	switch = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	# Interactive rebase with the given number of latest commits
+	interactive = "!r() { git rebase -i HEAD~$1; }; r"
+	
 	w = show
 	wp = show -p
 	wr = show -p --no-color	
